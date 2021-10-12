@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -63,7 +62,7 @@
             android:textSize="20sp"
             android:background="#CDDC39"
             android:text="@string/divide"
-            android:onClick="onDigit"
+            android:onClick="onOperator"
             tools:ignore="UsingOnClickInXml" />
 
     </LinearLayout>
@@ -82,7 +81,8 @@
             android:textSize="20sp"
             android:background="#2196F3"
             android:text="@string/_4"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="NestedWeights,UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnFive"
@@ -92,7 +92,8 @@
             android:textSize="20sp"
             android:background="#03A9F4"
             android:text="@string/_5"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSix"
@@ -102,7 +103,8 @@
             android:textSize="20sp"
             android:background="#00BCD4"
             android:text="@string/_6"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMultiple"
@@ -112,7 +114,8 @@
             android:textSize="20sp"
             android:background="#009688"
             android:text="@string/multiple"
-            android:onClick="onDigit"/>
+            android:onClick="onOperator"
+            tools:ignore="UsingOnClickInXml" />
 
     </LinearLayout>
 
@@ -130,7 +133,8 @@
             android:textSize="20sp"
             android:background="#3F51B5"
             android:text="@string/_1"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="NestedWeights,UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnTwo"
@@ -140,7 +144,8 @@
             android:textSize="20sp"
             android:background="#8BC34A"
             android:text="@string/_2"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnThree"
@@ -150,7 +155,8 @@
             android:textSize="20sp"
             android:background="#4CAF50"
             android:text="@string/_3"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMinus"
@@ -160,7 +166,8 @@
             android:textSize="20sp"
             android:background="#FFEB3B"
             android:text="@string/minus"
-            android:onClick="onDigit"/>
+            android:onClick="onOperator"
+            tools:ignore="UsingOnClickInXml" />
 
     </LinearLayout>
 
@@ -178,7 +185,8 @@
             android:textSize="20sp"
             android:background="#FFC107"
             android:text="@string/decimal"
-            android:onClick="onDigit"/>
+            android:onClick="onDec"
+            tools:ignore="NestedWeights,UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnZero"
@@ -188,7 +196,8 @@
             android:textSize="20sp"
             android:background="#FF9800"
             android:text="@string/_0"
-            android:onClick="onDigit"/>
+            android:onClick="onDigit"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnClear"
@@ -198,7 +207,8 @@
             android:textSize="16sp"
             android:background="#FF5722"
             android:text="@string/clear"
-            android:onClick="onDigit"/>
+            android:onClick="onClear"
+            tools:ignore="UsingOnClickInXml" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnAdd"
@@ -208,7 +218,8 @@
             android:textSize="20sp"
             android:background="#9C27B0"
             android:text="@string/plus"
-            android:onClick="onDigit"/>
+            android:onClick="onOperator"
+            tools:ignore="UsingOnClickInXml" />
 
     </LinearLayout>
 
@@ -224,7 +235,8 @@
             android:layout_height="match_parent"
             android:textSize="20sp"
             android:background="#03A9F4"
-            android:text="@string/equal"/>
+            android:text="@string/equal"
+            android:onClick="onEqual"/>
 
     </LinearLayout>
 
