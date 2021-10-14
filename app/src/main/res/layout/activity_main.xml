@@ -12,6 +12,10 @@
         android:layout_height="250dp"
         android:background="#efefef"
         android:textSize="48sp"
+        android:padding="16dp"
+        tools:text="0"
+        android:textColor="@color/black"
+        android:gravity="center_vertical|bottom|end"
         android:maxLength="12"/>
 
     <LinearLayout

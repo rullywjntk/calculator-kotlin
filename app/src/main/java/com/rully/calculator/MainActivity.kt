@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     fun onDigit(view: View) {
         binding.tvInput.append((view as Button).text)
         lastNumeric = true
-        Toast.makeText(this, "Button Works", Toast.LENGTH_LONG).show()
     }
 
     fun onOperator(view: View) {
@@ -46,21 +45,63 @@ class MainActivity : AppCompatActivity() {
                     tvValue = tvValue.substring(1)
                 }
 
-                if (tvValue.contains("-")) {
-                    val splitValue = tvValue.split("-")
-                    var one = splitValue[0]
-                    var two = splitValue[1]
+                when {
+                    tvValue.contains("-") -> {
+                        val splitValue = tvValue.split("-")
+                        var one = splitValue[0]
+                        var two = splitValue[1]
 
-                    if (prefix.isNotEmpty()) {
-                        one = prefix + one
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text = removeZero((one.toDouble() - two.toDouble()).toString())
                     }
+                    tvValue.contains("+") -> {
+                        val splitValue = tvValue.split("+")
+                        var one = splitValue[0]
+                        var two = splitValue[1]
 
-                    binding.tvInput.text = (one.toDouble() - two.toDouble()).toString()
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text = removeZero((one.toDouble() + two.toDouble()).toString())
+                    }
+                    tvValue.contains("*") -> {
+                        val splitValue = tvValue.split("*")
+                        var one = splitValue[0]
+                        var two = splitValue[1]
+
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text = removeZero((one.toDouble() * two.toDouble()).toString())
+                    }
+                    tvValue.contains("/") -> {
+                        val splitValue = tvValue.split("/")
+                        var one = splitValue[0]
+                        var two = splitValue[1]
+
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        binding.tvInput.text = removeZero((one.toDouble() / two.toDouble()).toString())
+                    }
                 }
             } catch (e: ArithmeticException) {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun removeZero(result: String): String {
+        var value = result
+        if (result.contains("0"))
+            value = result.substring(0, result.length - 2)
+        return value
     }
 
     private fun isOperator(value: String): Boolean {
@@ -79,11 +120,5 @@ class MainActivity : AppCompatActivity() {
         if (!(binding.tvInput.text.contains("."))) {
             binding.tvInput.append((view as Button).text)
         }
-
-//        if (lastNumeric && !lastDec) {
-//            binding.tvInput.append(".")
-//            lastNumeric = false
-//            lastDec = true
-//        }
     }
 }
