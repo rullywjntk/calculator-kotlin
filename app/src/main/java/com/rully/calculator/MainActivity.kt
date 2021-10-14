@@ -4,15 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import com.rully.calculator.databinding.ActivityMainBinding
 import java.lang.ArithmeticException
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    var lastNumeric: Boolean = false
-    var lastDec: Boolean = false
+    private var lastNumeric: Boolean = false
+    private var lastDec: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
                     tvValue.contains("-") -> {
                         val splitValue = tvValue.split("-")
                         var one = splitValue[0]
-                        var two = splitValue[1]
+                        val two = splitValue[1]
 
                         if (prefix.isNotEmpty()) {
                             one = prefix + one
@@ -60,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     tvValue.contains("+") -> {
                         val splitValue = tvValue.split("+")
                         var one = splitValue[0]
-                        var two = splitValue[1]
+                        val two = splitValue[1]
 
                         if (prefix.isNotEmpty()) {
                             one = prefix + one
@@ -71,7 +70,7 @@ class MainActivity : AppCompatActivity() {
                     tvValue.contains("*") -> {
                         val splitValue = tvValue.split("*")
                         var one = splitValue[0]
-                        var two = splitValue[1]
+                        val two = splitValue[1]
 
                         if (prefix.isNotEmpty()) {
                             one = prefix + one
@@ -82,7 +81,7 @@ class MainActivity : AppCompatActivity() {
                     tvValue.contains("/") -> {
                         val splitValue = tvValue.split("/")
                         var one = splitValue[0]
-                        var two = splitValue[1]
+                        val two = splitValue[1]
 
                         if (prefix.isNotEmpty()) {
                             one = prefix + one
